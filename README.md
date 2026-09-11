@@ -1,16 +1,15 @@
-# Lift Tire Solutions Website v5
+# Lift Tire Solutions Website v6
 
-This version connects both website quote forms to the Cloudflare Worker:
-https://lift-tire-quote-handler.bkpoovey.workers.dev/
+Merged version:
+- Latest approved visual design direction
+- Simplified clean website logo
+- Compact Service Area section, no "Check Your Location" button
+- Preferred "You may be paying more than you need..." sales message
+- Live Cloudflare Worker form submission handling from v5
+- Existing-quote uploads and new tire quote requests remain connected to the private R2 bucket
 
-What changed:
-- Existing Quote form submits live contact data and an uploaded quote file
-- New Tire Quote form submits live equipment/tire data and optional photos
-- Added required contact fields
-- Added success/error messages without leaving the website
-- Files remain private in the lift-tire-quotes R2 bucket
-
-Before public launch:
-- Test both forms end-to-end
-- Add Turnstile spam protection
-- Add email notifications to sales@lifttiresolutions.com
+Next:
+1. Upload v6 to GitHub and let Render redeploy.
+2. Test both forms on the live Render site.
+3. Verify new objects appear in Cloudflare R2.
+4. Then add Turnstile and email notifications.
