@@ -1,15 +1,17 @@
-# Lift Tire Solutions Website v6
+# Lift Tire Solutions Website v7
 
-Merged version:
-- Latest approved visual design direction
-- Simplified clean website logo
-- Compact Service Area section, no "Check Your Location" button
-- Preferred "You may be paying more than you need..." sales message
-- Live Cloudflare Worker form submission handling from v5
-- Existing-quote uploads and new tire quote requests remain connected to the private R2 bucket
+This version corrects the logo problem that remained in v6.
+
+Changes:
+- Removed the baked-in "PRIMARY LOGO / Full Tagline" microtext from the website logo
+- Removed the stray yellow divider from the logo image
+- Made the website logo background transparent
+- Uses the same clean logo in both the header and footer
+- Removed the white logo box in the footer
+- Keeps all v6 design and Cloudflare quote-form functionality
 
 Next:
-1. Upload v6 to GitHub and let Render redeploy.
-2. Test both forms on the live Render site.
-3. Verify new objects appear in Cloudflare R2.
-4. Then add Turnstile and email notifications.
+1. Upload all v7 files to GitHub.
+2. Commit to main.
+3. Let Render redeploy.
+4. Hard-refresh the live site if the old logo is cached.

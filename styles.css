@@ -106,3 +106,26 @@ footer .footer-grid img{max-width:300px}
   .service-area-map{display:none}
   .service-area-note{border-left:0;padding-left:0}
 }
+
+/* v7 logo/footer correction */
+.brand img{
+  width:270px;
+  max-height:86px;
+  object-fit:contain;
+  object-position:left center;
+}
+.footer-grid img{
+  max-width:285px;
+  background:transparent !important;
+  padding:0 !important;
+}
+footer{
+  padding-top:38px;
+}
+.footer-grid{
+  grid-template-columns:1.05fr .95fr 1fr;
+}
+@media(max-width:900px){
+  .brand img{width:220px}
+  .footer-grid img{max-width:245px}
+}
