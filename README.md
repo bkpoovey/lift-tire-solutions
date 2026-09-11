@@ -1,15 +1,15 @@
-# Lift Tire Solutions Website v3
+# Lift Tire Solutions Website v4
 
-Render settings:
-- Branch: main
-- Root Directory: blank
-- Build Command: blank
-- Publish Directory: .
+This is the consolidated design-review version.
 
-Updates in v3:
-- Enlarged logo in header
-- Repositioned hero "Keep Your Operation Moving" message
-- Stronger tire solutions section
-- New "send us your quote" 3-step strip
-- Cleaner transition into quote forms
-- Quote forms are still visual only and are not yet connected to secure delivery
+Updates:
+- Simplified website-specific logo without microscopic descriptor copy
+- Preferred "You may be paying more than you need..." pricing message retained
+- Revised supporting pricing copy
+- Added Service Area / Multi-Location section
+- Added Equipment City, State, ZIP and multi-location checkbox to both quote paths
+- Added no-obligation sales message
+- Mobile refinements
+- Footer continues to identify Lift Tire Solutions as a division of Central Equipment Solutions, LLC
+
+Quote forms remain visual-only until secure form delivery and file uploads are connected.

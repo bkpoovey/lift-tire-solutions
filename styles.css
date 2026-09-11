@@ -42,3 +42,29 @@ footer .footer-grid img{max-width:300px}
 @media(max-width:560px){
   .brand img{width:175px}
 }
+
+
+/* v4 final design refinements */
+.brand img{width:260px;max-height:86px;object-fit:contain;object-position:left center}
+.footer-grid img{max-width:270px;background:#fff;padding:12px}
+.service-area{background:#11171b;color:#fff;padding:62px 0}
+.service-area-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+.service-area h2{font-size:42px;line-height:1.05;margin:10px 0 18px}
+.service-area p{font-size:18px;color:#d5dade;max-width:700px}
+.service-area-card{background:#fff;color:#151a1e;padding:34px;border-left:7px solid var(--yellow);border-radius:4px}
+.service-area-card h3{font-size:28px;line-height:1.08;margin:0 0 12px;text-transform:uppercase}
+.service-area-card p{color:#4e575e;font-size:17px}
+.location-fields{display:grid;grid-template-columns:1.5fr .55fr .8fr;gap:12px}
+.checkline{display:flex!important;align-items:center;gap:9px;font-weight:700}
+.checkline input{width:auto!important;margin:0!important}
+.no-obligation{font-size:18px;margin-top:4px;color:#59626a}
+.price-callout h3{font-size:36px}
+@media(max-width:900px){
+  .service-area-grid{grid-template-columns:1fr;gap:30px}
+  .location-fields{grid-template-columns:1fr 1fr}
+  .location-fields label:first-child{grid-column:1/-1}
+}
+@media(max-width:560px){
+  .location-fields{grid-template-columns:1fr}
+  .location-fields label:first-child{grid-column:auto}
+}
