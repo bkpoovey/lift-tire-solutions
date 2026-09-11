@@ -9,3 +9,36 @@
 footer{background:#14191d;color:#fff;padding:45px 0 22px}.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:40px}.footer-grid img{max-width:260px;background:#fff;padding:10px}.footer-grid a{color:#fff}.footer-tag{font-size:27px;font-weight:900;text-transform:uppercase}.legal{border-top:1px solid #394147;margin-top:30px;padding-top:18px;color:#aeb5ba;font-size:13px}
 @media(max-width:900px){.site-header nav{display:none}.nav-wrap{min-height:82px}.brand img{width:190px}.top-cta{margin-left:auto}.hero-photo{inset:0}.hero-shade{background:linear-gradient(90deg,rgba(18,23,27,.96),rgba(18,23,27,.74))}.hero-content{padding:55px 0}.hero-tag{display:none}.benefit-grid{grid-template-columns:1fr 1fr;row-gap:35px}.split,.quote-grid,.footer-grid{grid-template-columns:1fr}.footer-grid{text-align:center}.footer-grid img{margin:auto}.checks{columns:1}}
 @media(max-width:560px){.benefit-grid{grid-template-columns:1fr}.benefit-grid article{border:0;border-bottom:1px solid #dde2e5;padding:0 12px 24px}.two{grid-template-columns:1fr}.hero h1{font-size:46px}.top-cta{font-size:12px;padding:11px 13px}.brand img{width:155px}}
+
+
+/* v3 refinements */
+.brand img{width:280px}
+.hero-tag{right:6%;bottom:72px}
+.solutions-copy .section-lede{font-size:18px;color:#d5dadd;max-width:720px}
+.callout-kicker{font-size:14px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px}
+.callout-btn{margin-top:12px;background:#12171b!important}
+.trust-strip{background:#fff;border-bottom:1px solid #e7eaec}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.trust-grid>div{display:flex;align-items:center;gap:16px;padding:28px 30px;border-right:1px solid #e1e5e8}
+.trust-grid>div:last-child{border-right:0}
+.trust-number{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);font-weight:900;font-size:20px;flex:0 0 auto}
+.trust-grid strong{font-size:18px}
+.trust-grid span:not(.trust-number){color:#6b7379}
+.quote-intro{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:18px 0 22px}
+.quote-intro>div{background:#fff;border-left:5px solid var(--yellow);padding:16px 18px;font-size:17px}
+.quote .eyebrow{margin-bottom:0}
+.quote h2{margin-bottom:6px}
+.card h3{margin-bottom:4px}
+.card p{color:#59626a}
+footer .footer-grid img{max-width:300px}
+
+@media(max-width:900px){
+  .brand img{width:220px}
+  .hero-tag{right:5%;bottom:40px}
+  .trust-grid{grid-template-columns:1fr}
+  .trust-grid>div{border-right:0;border-bottom:1px solid #e1e5e8}
+  .quote-intro{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .brand img{width:175px}
+}

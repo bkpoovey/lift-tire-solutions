@@ -1,4 +1,4 @@
-# Lift Tire Solutions Website v2
+# Lift Tire Solutions Website v3
 
 Render settings:
 - Branch: main
@@ -6,11 +6,10 @@ Render settings:
 - Build Command: blank
 - Publish Directory: .
 
-Changes in v2:
-- Stable logo file path using assets/logo.png
-- Real forklift hero image
-- Improved top section to more closely match chosen concept
-- Proper SVG benefit icons
-- Responsive layout
-
-Important: quote forms are display-only for now. Secure form delivery and file upload handling will be connected after the visual site is approved.
+Updates in v3:
+- Enlarged logo in header
+- Repositioned hero "Keep Your Operation Moving" message
+- Stronger tire solutions section
+- New "send us your quote" 3-step strip
+- Cleaner transition into quote forms
+- Quote forms are still visual only and are not yet connected to secure delivery
