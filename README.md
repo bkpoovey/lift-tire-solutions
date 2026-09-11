@@ -1,8 +1,14 @@
-# Lift Tire Solutions Website v9
+# Lift Tire Solutions Website v10
 
-This version only corrects the two remaining asset issues:
-- Uses a true North Carolina county map outline (CC0 Wikimedia source) with a Western NC marker
-- Rebuilds the header/footer logo from the original high-resolution brand board
-- Preserves the logo's aspect ratio and removes footer distortion
+Changes in this version:
+- Footer now uses a dedicated, correctly proportioned footer logo based on the approved footer concept.
+- Normal contact/location fields remain ordinary entry boxes.
+- Quantity is now a true dropdown: 1–10 and 10+.
+- Tire Type remains a dropdown.
+- All Cloudflare Worker / R2 quote-upload functionality is preserved.
 
-Everything else from v8 is retained, including the live Cloudflare quote forms.
+After upload:
+1. Commit v10 to GitHub main.
+2. Let Render redeploy.
+3. Hard refresh Safari (Command + Option + R).
+4. Check the footer and both quote forms.

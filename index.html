@@ -130,13 +130,13 @@
       <form class="card quote-form" id="existing-quote-form" action="https://lift-tire-quote-handler.bkpoovey.workers.dev/" method="POST" enctype="multipart/form-data">
         <h3>I already have a quote</h3><input type="hidden" name="formType" value="existing-quote">
         <p>Upload your existing quote and let us provide a competitive price.</p>
-        <label>Company Name<input type="text" name="companyName" required></label>
-        <label>Contact Name<input type="text" name="contactName" required></label>
-        <div class="two"><label>Email<input type="email" name="email" required></label><label>Phone<input type="tel" name="phone" required></label></div>
+        <label>Company Name<input type="text" name="companyName" autocomplete="organization" required></label>
+        <label>Contact Name<input type="text" name="contactName" autocomplete="name" required></label>
+        <div class="two"><label>Email<input type="email" name="email" autocomplete="email" required></label><label>Phone<input type="tel" name="phone" autocomplete="tel" required></label></div>
         <div class="location-fields">
-          <label>Equipment City<input type="text" name="equipmentCity"></label>
-          <label>State<input type="text" name="state" maxlength="2" placeholder="NC"></label>
-          <label>ZIP Code<input type="text" name="zipCode" inputmode="numeric"></label>
+          <label>Equipment City<input type="text" name="equipmentCity" autocomplete="address-level2"></label>
+          <label>State<input type="text" name="state" autocomplete="address-level1" maxlength="2" placeholder="NC"></label>
+          <label>ZIP Code<input type="text" name="zipCode" autocomplete="postal-code" inputmode="numeric"></label>
         </div>
         <label class="checkline"><input type="checkbox" name="multipleLocations" value="yes"> We have multiple locations</label>
         <label>Upload Quote<input type="file" name="quoteFile" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp" required></label>
@@ -147,17 +147,30 @@
       <form class="card quote-form" id="new-quote-form" action="https://lift-tire-quote-handler.bkpoovey.workers.dev/" method="POST" enctype="multipart/form-data">
         <h3>I need a new tire quote</h3><input type="hidden" name="formType" value="new-quote">
         <p>Tell us about your equipment and we'll provide a quote.</p>
-        <label>Company Name<input type="text" name="companyName" required></label>
-        <label>Contact Name<input type="text" name="contactName" required></label>
-        <div class="two"><label>Email<input type="email" name="email" required></label><label>Phone<input type="tel" name="phone" required></label></div>
+        <label>Company Name<input type="text" name="companyName" autocomplete="organization" required></label>
+        <label>Contact Name<input type="text" name="contactName" autocomplete="name" required></label>
+        <div class="two"><label>Email<input type="email" name="email" autocomplete="email" required></label><label>Phone<input type="tel" name="phone" autocomplete="tel" required></label></div>
         <div class="location-fields">
-          <label>Equipment City<input type="text" name="equipmentCity"></label>
-          <label>State<input type="text" name="state" maxlength="2" placeholder="NC"></label>
-          <label>ZIP Code<input type="text" name="zipCode" inputmode="numeric"></label>
+          <label>Equipment City<input type="text" name="equipmentCity" autocomplete="address-level2"></label>
+          <label>State<input type="text" name="state" autocomplete="address-level1" maxlength="2" placeholder="NC"></label>
+          <label>ZIP Code<input type="text" name="zipCode" autocomplete="postal-code" inputmode="numeric"></label>
         </div>
         <label class="checkline"><input type="checkbox" name="multipleLocations" value="yes"> We have multiple locations</label>
         <div class="two"><label>Equipment Make<input type="text" name="equipmentMake"></label><label>Equipment Model<input type="text" name="equipmentModel"></label></div>
-        <div class="two"><label>Tire Size<input type="text" name="tireSize"></label><label>Quantity<input type="number" name="quantity" min="1"></label></div>
+        <div class="two"><label>Tire Size<input type="text" name="tireSize"></label><label>Quantity<select name="quantity">
+      <option value="">Select...</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="10+">10+</option>
+    </select></label></div>
         <label>Tire Type<select name="tireType"><option>Select...</option><option>Cushion / Press-on</option><option>Solid Pneumatic</option><option>Pneumatic</option><option>Polyurethane</option><option>Not sure</option></select></label>
         <label>Upload Photos<input type="file" name="photos" multiple accept=".jpg,.jpeg,.png,.webp,.pdf"></label>
         <label>Additional Information<textarea name="additionalInformation" rows="4"></textarea></label>
@@ -174,7 +187,7 @@
 <footer id="contact">
   <div class="wrap footer-grid">
     <div class="footer-brand">
-      <img src="./assets/logo-web-clean.png" alt="Lift Tire Solutions">
+      <img src="./assets/footer-logo.png" alt="Lift Tire Solutions">
     </div>
     <div class="footer-contact">
       <p><strong>828-493-3749</strong></p>
