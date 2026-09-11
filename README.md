@@ -1,17 +1,20 @@
-# Lift Tire Solutions Website v7
+# Lift Tire Solutions Website v8
 
-This version corrects the logo problem that remained in v6.
+This version matches the approved visual direction and preserves the live Cloudflare form handling.
 
-Changes:
-- Removed the baked-in "PRIMARY LOGO / Full Tagline" microtext from the website logo
-- Removed the stray yellow divider from the logo image
-- Made the website logo background transparent
-- Uses the same clean logo in both the header and footer
-- Removed the white logo box in the footer
-- Keeps all v6 design and Cloudflare quote-form functionality
+Key corrections:
+- Clean, undistorted header and footer logo
+- Footer logo keeps its original proportions
+- Replaced the generic map shape with a recognizable North Carolina silhouette
+- Western NC is highlighted in yellow
+- Compact service-area section
+- Polished footer layout
+- Keeps the "You may be paying more than you need..." message
+- Keeps both live quote forms connected to the Cloudflare Worker/R2 workflow
 
 Next:
-1. Upload all v7 files to GitHub.
+1. Upload v8 to GitHub.
 2. Commit to main.
 3. Let Render redeploy.
-4. Hard-refresh the live site if the old logo is cached.
+4. Hard refresh the site.
+5. Test a quote submission.
