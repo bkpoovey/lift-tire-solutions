@@ -1,12 +1,16 @@
-# Lift Tire Solutions Website
+# Lift Tire Solutions Website v2
 
-Initial static website for Lift Tire Solutions.
+Render settings:
+- Branch: main
+- Root Directory: blank
+- Build Command: blank
+- Publish Directory: .
 
-## Render settings
-- Branch: `main`
-- Root Directory: leave blank
-- Build Command: leave blank
-- Publish Directory: `.`
+Changes in v2:
+- Stable logo file path using assets/logo.png
+- Real forklift hero image
+- Improved top section to more closely match chosen concept
+- Proper SVG benefit icons
+- Responsive layout
 
-## Important
-The quote forms are visual only in this first version. Do not advertise the forms as live until form delivery and secure file uploads are connected.
+Important: quote forms are display-only for now. Secure form delivery and file upload handling will be connected after the visual site is approved.
