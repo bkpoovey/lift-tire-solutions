@@ -135,42 +135,43 @@
       <div><strong>Need pricing from scratch?</strong> Send us the equipment details.</div>
     </div>
     <div class="quote-grid">
-      <form class="card" onsubmit="return false">
-        <h3>I already have a quote</h3>
+      <form class="card quote-form" id="existing-quote-form" action="https://lift-tire-quote-handler.bkpoovey.workers.dev/" method="POST" enctype="multipart/form-data">
+        <h3>I already have a quote</h3><input type="hidden" name="formType" value="existing-quote">
         <p>Upload your existing quote and let us provide a competitive price.</p>
-        <label>Company Name<input type="text"></label>
-        <label>Contact Name<input type="text"></label>
-        <div class="two"><label>Email<input type="email"></label><label>Phone<input type="tel"></label></div>
+        <label>Company Name<input type="text" name="companyName" required></label>
+        <label>Contact Name<input type="text" name="contactName" required></label>
+        <div class="two"><label>Email<input type="email" name="email" required></label><label>Phone<input type="tel" name="phone" required></label></div>
         <div class="location-fields">
-          <label>Equipment City<input type="text"></label>
-          <label>State<input type="text" maxlength="2" placeholder="NC"></label>
-          <label>ZIP Code<input type="text" inputmode="numeric"></label>
+          <label>Equipment City<input type="text" name="equipmentCity"></label>
+          <label>State<input type="text" name="state" maxlength="2" placeholder="NC"></label>
+          <label>ZIP Code<input type="text" name="zipCode" inputmode="numeric"></label>
         </div>
-        <label class="checkline"><input type="checkbox"> We have multiple locations</label>
-        <label>Upload Quote<input type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"></label>
-        <label>Comments<textarea rows="4"></textarea></label>
+        <label class="checkline"><input type="checkbox" name="multipleLocations" value="yes"> We have multiple locations</label>
+        <label>Upload Quote<input type="file" name="quoteFile" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp" required></label>
+        <label>Comments<textarea name="comments" rows="4"></textarea></label>
         <button class="btn btn-yellow" type="submit">Submit for Pricing</button>
-        <small>Quote submission will be activated after the website design is finalized.</small>
+        <div class="form-status" aria-live="polite"></div>
       </form>
-      <form class="card" onsubmit="return false">
-        <h3>I need a new tire quote</h3>
+      <form class="card quote-form" id="new-quote-form" action="https://lift-tire-quote-handler.bkpoovey.workers.dev/" method="POST" enctype="multipart/form-data">
+        <h3>I need a new tire quote</h3><input type="hidden" name="formType" value="new-quote">
         <p>Tell us about your equipment and we'll provide a quote.</p>
-        <label>Company Name<input type="text"></label>
-        <label>Contact Name<input type="text"></label>
-        <div class="two"><label>Email<input type="email"></label><label>Phone<input type="tel"></label></div>
+        <label>Company Name<input type="text" name="companyName" required></label>
+        <label>Contact Name<input type="text" name="contactName" required></label>
+        <div class="two"><label>Email<input type="email" name="email" required></label><label>Phone<input type="tel" name="phone" required></label></div>
         <div class="location-fields">
-          <label>Equipment City<input type="text"></label>
-          <label>State<input type="text" maxlength="2" placeholder="NC"></label>
-          <label>ZIP Code<input type="text" inputmode="numeric"></label>
+          <label>Equipment City<input type="text" name="equipmentCity"></label>
+          <label>State<input type="text" name="state" maxlength="2" placeholder="NC"></label>
+          <label>ZIP Code<input type="text" name="zipCode" inputmode="numeric"></label>
         </div>
-        <label class="checkline"><input type="checkbox"> We have multiple locations</label>
-        <div class="two"><label>Equipment Make<input type="text"></label><label>Equipment Model<input type="text"></label></div>
-        <div class="two"><label>Tire Size<input type="text"></label><label>Quantity<input type="number" min="1"></label></div>
-        <label>Tire Type<select><option>Select...</option><option>Cushion / Press-on</option><option>Solid Pneumatic</option><option>Pneumatic</option><option>Polyurethane</option><option>Not sure</option></select></label>
-        <label>Upload Photos<input type="file" multiple accept=".jpg,.jpeg,.png,.pdf"></label>
-        <label>Additional Information<textarea rows="4"></textarea></label>
+        <label class="checkline"><input type="checkbox" name="multipleLocations" value="yes"> We have multiple locations</label>
+        <div class="two"><label>Equipment Make<input type="text" name="equipmentMake"></label><label>Equipment Model<input type="text" name="equipmentModel"></label></div>
+        <div class="two"><label>Tire Size<input type="text" name="tireSize"></label><label>Quantity<input type="number" name="quantity" min="1"></label></div>
+        <label>Tire Type<select name="tireType"><option>Select...</option><option>Cushion / Press-on</option><option>Solid Pneumatic</option><option>Pneumatic</option><option>Polyurethane</option><option>Not sure</option></select></label>
+        <label>Upload Photos<input type="file" name="photos" multiple accept=".jpg,.jpeg,.png,.webp,.pdf"></label>
+        <label>Additional Information<textarea name="additionalInformation" rows="4"></textarea></label>
         <button class="btn btn-dark" type="submit">Request a Quote</button>
         <small>Not sure what tire you need? Upload a tire and data-plate photo.</small>
+        <div class="form-status" aria-live="polite"></div>
       </form>
     </div>
   </div>
@@ -190,5 +191,46 @@
   </div>
   <div class="wrap legal">© 2026 Lift Tire Solutions. A Division of Central Equipment Solutions, LLC.</div>
 </footer>
+
+<script>
+document.querySelectorAll(".quote-form").forEach((form) => {
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const button = form.querySelector('button[type="submit"]');
+    const status = form.querySelector(".form-status");
+    const originalText = button.textContent;
+
+    button.disabled = true;
+    button.textContent = "Sending...";
+    status.className = "form-status";
+    status.textContent = "Uploading your information...";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form)
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || "Unable to submit your quote request.");
+      }
+
+      form.reset();
+      status.className = "form-status success";
+      status.innerHTML = "<strong>Thank you.</strong> Your quote request has been received. A Lift Tire Solutions representative will contact you shortly.";
+    } catch (error) {
+      status.className = "form-status error";
+      status.textContent = error.message || "We could not submit your request. Please try again or call 828-493-3749.";
+    } finally {
+      button.disabled = false;
+      button.textContent = originalText;
+    }
+  });
+});
+</script>
+
 </body>
 </html>

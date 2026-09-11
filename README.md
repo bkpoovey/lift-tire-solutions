@@ -1,15 +1,16 @@
-# Lift Tire Solutions Website v4
+# Lift Tire Solutions Website v5
 
-This is the consolidated design-review version.
+This version connects both website quote forms to the Cloudflare Worker:
+https://lift-tire-quote-handler.bkpoovey.workers.dev/
 
-Updates:
-- Simplified website-specific logo without microscopic descriptor copy
-- Preferred "You may be paying more than you need..." pricing message retained
-- Revised supporting pricing copy
-- Added Service Area / Multi-Location section
-- Added Equipment City, State, ZIP and multi-location checkbox to both quote paths
-- Added no-obligation sales message
-- Mobile refinements
-- Footer continues to identify Lift Tire Solutions as a division of Central Equipment Solutions, LLC
+What changed:
+- Existing Quote form submits live contact data and an uploaded quote file
+- New Tire Quote form submits live equipment/tire data and optional photos
+- Added required contact fields
+- Added success/error messages without leaving the website
+- Files remain private in the lift-tire-quotes R2 bucket
 
-Quote forms remain visual-only until secure form delivery and file uploads are connected.
+Before public launch:
+- Test both forms end-to-end
+- Add Turnstile spam protection
+- Add email notifications to sales@lifttiresolutions.com

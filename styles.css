@@ -68,3 +68,8 @@ footer .footer-grid img{max-width:300px}
   .location-fields{grid-template-columns:1fr}
   .location-fields label:first-child{grid-column:auto}
 }
+
+.form-status{margin-top:12px;min-height:22px;font-size:14px;color:#5d666d}
+.form-status.success{background:#eef8ef;border-left:4px solid #2f8a43;padding:12px;color:#1d5e2c}
+.form-status.error{background:#fff1f1;border-left:4px solid #b42318;padding:12px;color:#7a1b14}
+.quote-form button:disabled{opacity:.65;cursor:wait}
