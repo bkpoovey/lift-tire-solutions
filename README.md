@@ -1,20 +1,8 @@
-# Lift Tire Solutions Website v8
+# Lift Tire Solutions Website v9
 
-This version matches the approved visual direction and preserves the live Cloudflare form handling.
+This version only corrects the two remaining asset issues:
+- Uses a true North Carolina county map outline (CC0 Wikimedia source) with a Western NC marker
+- Rebuilds the header/footer logo from the original high-resolution brand board
+- Preserves the logo's aspect ratio and removes footer distortion
 
-Key corrections:
-- Clean, undistorted header and footer logo
-- Footer logo keeps its original proportions
-- Replaced the generic map shape with a recognizable North Carolina silhouette
-- Western NC is highlighted in yellow
-- Compact service-area section
-- Polished footer layout
-- Keeps the "You may be paying more than you need..." message
-- Keeps both live quote forms connected to the Cloudflare Worker/R2 workflow
-
-Next:
-1. Upload v8 to GitHub.
-2. Commit to main.
-3. Let Render redeploy.
-4. Hard refresh the site.
-5. Test a quote submission.
+Everything else from v8 is retained, including the live Cloudflare quote forms.

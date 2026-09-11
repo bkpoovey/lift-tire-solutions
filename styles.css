@@ -197,3 +197,57 @@ footer{background:#12171b;color:#fff;padding:28px 0 18px}
   .footer-grid{grid-template-columns:1fr;text-align:center;gap:24px}
   .footer-brand img{margin:auto}
 }
+
+
+/* v9 asset corrections */
+.brand img{
+  width:270px;
+  height:auto;
+  max-height:74px;
+  object-fit:contain;
+  object-position:left center;
+  display:block;
+}
+.footer-brand img{
+  width:285px;
+  max-width:100%;
+  height:auto;
+  max-height:none;
+  display:block;
+  object-fit:contain;
+  background:transparent !important;
+  padding:0 !important;
+  filter:none !important;
+}
+.nc-map-wrap{
+  position:relative;
+  width:100%;
+  max-width:270px;
+}
+.nc-map-img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:contain;
+}
+.western-nc-marker{
+  position:absolute;
+  left:14%;
+  top:49%;
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  background:var(--yellow);
+  border:4px solid #11171b;
+  box-shadow:0 0 0 4px rgba(255,193,7,.3);
+}
+.service-area-map{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+@media(max-width:900px){
+  .brand img{width:220px}
+  .footer-brand img{width:250px;margin:auto}
+  .nc-map-wrap{max-width:330px;margin:auto}
+}
